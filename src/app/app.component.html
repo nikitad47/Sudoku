@@ -1,0 +1,13 @@
+<h1>Sudoku</h1>
+<div class="main">
+  <table >
+      <tr *ngFor="let i of [0,1,2,3,4,5,6,7,8]">
+        <td *ngFor="let j of [0,1,2,3,4,5,6,7,8]" >
+          <input maxlength="1" id="{{i}}{{j}}"  type="text" [(ngModel)]="values[i][j]"
+          oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+        </td>
+      </tr>
+  </table>
+  <br>
+  <div class="buttonD"><button (click)="calculate()" [disabled]="disable">Submit</button></div>
+</div>
